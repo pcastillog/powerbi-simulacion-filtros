@@ -1538,23 +1538,23 @@ html&gt;body{padding:0}&lt;/style&gt;
     #filter-flow-classroom .controls { display:flex; align-items:end; gap:10px; flex-wrap:wrap; }
     #filter-flow-classroom .control { min-width:150px; }
     #filter-flow-classroom .control label { display:block; margin-bottom:5px; }
-    #filter-flow-classroom .simulation { display:grid; grid-template-columns:minmax(390px,.85fr) minmax(560px,1.15fr); gap:22px; align-items:start; }
-    #filter-flow-classroom .model { position:relative; min-height:430px; }
-    #filter-flow-classroom .node { position:absolute; width:166px; padding:13px; background:var(--card); color:var(--card-foreground); border:1px solid var(--border); border-radius:10px; transition:opacity .25s, transform .25s, box-shadow .25s, background .25s; }
+    #filter-flow-classroom .simulation { display:grid; grid-template-columns:minmax(450px,.9fr) minmax(560px,1.1fr); gap:24px; align-items:start; }
+    #filter-flow-classroom .model { position:relative; min-height:505px; }
+    #filter-flow-classroom .node { position:absolute; width:205px; padding:13px; background:var(--card); color:var(--card-foreground); border:1px solid var(--border); border-radius:10px; transition:opacity .25s, transform .25s, box-shadow .25s, background .25s; }
     #filter-flow-classroom .node strong { display:block; font-weight:500; margin-bottom:8px; }
     #filter-flow-classroom .node span { display:flex; justify-content:space-between; gap:8px; margin-top:5px; color:var(--muted-foreground); }
     #filter-flow-classroom .node b { color:var(--foreground); font-weight:500; }
-    #filter-flow-classroom .product { left:0; top:12px; }
-    #filter-flow-classroom .client { left:0; top:151px; }
-    #filter-flow-classroom .calendar { left:0; top:290px; }
-    #filter-flow-classroom .fact { right:0; top:120px; width:205px; background:color-mix(in srgb,var(--viz-series-2) 12%,var(--card)); }
+    #filter-flow-classroom .product { left:0; top:0; }
+    #filter-flow-classroom .client { left:0; top:168px; }
+    #filter-flow-classroom .calendar { left:0; top:336px; }
+    #filter-flow-classroom .fact { right:0; top:170px; width:220px; background:color-mix(in srgb,var(--viz-series-2) 12%,var(--card)); }
     #filter-flow-classroom .node.inactive { opacity:.28; }
     #filter-flow-classroom .node.selected { box-shadow:0 0 0 4px color-mix(in srgb,var(--viz-series-1) 55%,transparent); transform:scale(1.035); }
     #filter-flow-classroom .node.selected.pulse { animation:nodePulse .65s ease-in-out 2; }
     #filter-flow-classroom .node.fact.hit { animation:factHit .55s ease-out 2; box-shadow:0 0 0 4px color-mix(in srgb,var(--viz-series-2) 58%,transparent); }
     @keyframes nodePulse { 50% { transform:scale(1.07); box-shadow:0 0 0 8px color-mix(in srgb,var(--viz-series-1) 30%,transparent); } }
     @keyframes factHit { 50% { transform:scale(1.045); background:color-mix(in srgb,var(--viz-series-2) 25%,var(--card)); } }
-    #filter-flow-classroom .paths { position:absolute; inset:0; width:100%; height:430px; pointer-events:none; overflow:visible; }
+    #filter-flow-classroom .paths { position:absolute; inset:0; width:100%; height:505px; pointer-events:none; overflow:visible; }
     #filter-flow-classroom .relationship { fill:none; stroke:var(--border); stroke-width:2; }
     #filter-flow-classroom .relationship.active { stroke:var(--viz-series-1); stroke-width:7; stroke-dasharray:13 9; animation:dashFlow .42s linear infinite; filter:drop-shadow(0 0 5px color-mix(in srgb,var(--viz-series-1) 70%,transparent)); }
     #filter-flow-classroom .traveler { fill:var(--viz-series-1); stroke:var(--background); stroke-width:3; opacity:0; filter:drop-shadow(0 0 7px var(--viz-series-1)); }
@@ -1577,7 +1577,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #filter-flow-classroom .status strong { color:var(--foreground); font-weight:500; }
     #filter-flow-classroom .key { color:var(--viz-series-1); }
     #filter-flow-classroom .metric { color:var(--viz-series-2); }
-    @media (max-width:900px) { #filter-flow-classroom .simulation { grid-template-columns:1fr; } #filter-flow-classroom .model { min-height:420px; max-width:560px; } #filter-flow-classroom .paths { height:420px; } }
+    @media (max-width:900px) { #filter-flow-classroom .simulation { grid-template-columns:1fr; } #filter-flow-classroom .model { min-height:505px; max-width:620px; } #filter-flow-classroom .paths { height:505px; } }
     @media (prefers-reduced-motion:reduce) { #filter-flow-classroom * { animation-duration:.01ms !important; animation-iteration-count:1 !important; } }
   &lt;/style&gt;
   &lt;div class=&quot;header&quot;&gt;
@@ -1590,9 +1590,9 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;/div&gt;
   &lt;div class=&quot;simulation&quot;&gt;
     &lt;div class=&quot;model&quot; aria-label=&quot;Modelo estrella con tres dimensiones y una tabla de hechos&quot;&gt;
-      &lt;svg class=&quot;paths&quot; viewBox=&quot;0 0 560 430&quot; preserveAspectRatio=&quot;none&quot; role=&quot;img&quot; aria-label=&quot;Relaciones uno a muchos entre las dimensiones y la tabla Hechos Ventas&quot;&gt;
-        &lt;path id=&quot;path-product&quot; class=&quot;relationship&quot; d=&quot;M166 68 H280 V160 H350&quot;/&gt;&lt;path id=&quot;path-client&quot; class=&quot;relationship&quot; d=&quot;M166 207 H350&quot;/&gt;&lt;path id=&quot;path-month&quot; class=&quot;relationship&quot; d=&quot;M166 346 H280 V254 H350&quot;/&gt;
-        &lt;circle id=&quot;flow-traveler&quot; class=&quot;traveler&quot; r=&quot;9&quot; cx=&quot;0&quot; cy=&quot;0&quot;/&gt;&lt;text class=&quot;rel-label&quot; x=&quot;220&quot; y=&quot;194&quot;&gt;filtro 1 → N&lt;/text&gt;
+      &lt;svg class=&quot;paths&quot; viewBox=&quot;0 0 620 505&quot; preserveAspectRatio=&quot;none&quot; role=&quot;img&quot; aria-label=&quot;Relaciones uno a muchos entre las dimensiones y la tabla Hechos Ventas&quot;&gt;
+        &lt;path id=&quot;path-product&quot; class=&quot;relationship&quot; d=&quot;M205 68 H320 V205 H390&quot;/&gt;&lt;path id=&quot;path-client&quot; class=&quot;relationship&quot; d=&quot;M205 236 H390&quot;/&gt;&lt;path id=&quot;path-month&quot; class=&quot;relationship&quot; d=&quot;M205 404 H320 V267 H390&quot;/&gt;
+        &lt;circle id=&quot;flow-traveler&quot; class=&quot;traveler&quot; r=&quot;9&quot; cx=&quot;0&quot; cy=&quot;0&quot;/&gt;&lt;text class=&quot;rel-label&quot; x=&quot;250&quot; y=&quot;226&quot;&gt;filtro 1 → N&lt;/text&gt;
       &lt;/svg&gt;
       &lt;div class=&quot;node product&quot; data-node=&quot;product&quot;&gt;&lt;strong&gt;DimProducto&lt;/strong&gt;&lt;span&gt;&lt;em&gt;IdProducto&lt;/em&gt;&lt;b id=&quot;node-product-id&quot;&gt;P001 · P003&lt;/b&gt;&lt;/span&gt;&lt;span&gt;&lt;em&gt;Producto&lt;/em&gt;&lt;b id=&quot;node-product-name&quot;&gt;Laptop · Monitor&lt;/b&gt;&lt;/span&gt;&lt;span&gt;&lt;em&gt;Categoría&lt;/em&gt;&lt;b id=&quot;node-product-value&quot;&gt;Computación&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
       &lt;div class=&quot;node client&quot; data-node=&quot;client&quot;&gt;&lt;strong&gt;DimCliente&lt;/strong&gt;&lt;span&gt;&lt;em&gt;IdCliente&lt;/em&gt;&lt;b id=&quot;node-client-id&quot;&gt;C001&lt;/b&gt;&lt;/span&gt;&lt;span&gt;&lt;em&gt;Cliente&lt;/em&gt;&lt;b id=&quot;node-client-value&quot;&gt;Comercial Lima&lt;/b&gt;&lt;/span&gt;&lt;span&gt;&lt;em&gt;Ciudad&lt;/em&gt;&lt;b id=&quot;node-client-city&quot;&gt;Lima&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
@@ -1624,7 +1624,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       function loadValues(saved){const vals=valuesFor(dimension.value);value.innerHTML=vals.map(v=&gt;`&lt;option value=&quot;${v}&quot;&gt;${v}&lt;/option&gt;`).join(&#x27;&#x27;);if(saved&amp;&amp;vals.includes(saved))value.value=saved;}
       function matches(d){return d[fields[dimension.value]]===value.value;}
       function table(state){body.innerHTML=sales.map((d,i)=&gt;{const cls=state===&#x27;result&#x27;?(matches(d)?&#x27;included&#x27;:&#x27;excluded&#x27;):(state===&#x27;waiting&#x27;?&#x27;waiting&#x27;:&#x27;&#x27;);const delay=matches(d)?`animation-delay:${i*90}ms`:&#x27;&#x27;;return `&lt;tr class=&quot;${cls}&quot; style=&quot;${delay}&quot;&gt;&lt;td&gt;${d.sale}&lt;/td&gt;&lt;td&gt;${d.date}&lt;/td&gt;&lt;td&gt;${d.productId}&lt;/td&gt;&lt;td&gt;${d.product}&lt;/td&gt;&lt;td&gt;${d.category}&lt;/td&gt;&lt;td&gt;${d.clientId}&lt;/td&gt;&lt;td&gt;${d.client}&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;${money(d.total)}&lt;/td&gt;&lt;/tr&gt;`;}).join(&#x27;&#x27;);}
-      function setNodes(stage){root.querySelectorAll(&#x27;.node&#x27;).forEach(n=&gt;n.classList.remove(&#x27;selected&#x27;,&#x27;pulse&#x27;,&#x27;inactive&#x27;,&#x27;hit&#x27;));root.querySelectorAll(&#x27;.node:not(.fact)&#x27;).forEach(n=&gt;{if(n.dataset.node!==dimension.value)n.classList.add(&#x27;inactive&#x27;);});const selected=root.querySelector(`[data-node=&quot;${dimension.value}&quot;]`);if(stage&gt;=1)selected.classList.add(&#x27;selected&#x27;);if(stage===1)selected.classList.add(&#x27;pulse&#x27;);if(stage&gt;=3)root.querySelector(&#x27;.fact&#x27;).classList.add(&#x27;hit&#x27;);root.querySelectorAll(&#x27;.relationship&#x27;).forEach(p=&gt;p.classList.remove(&#x27;active&#x27;));if(stage===2)root.querySelector(`#path-${dimension.value}`).classList.add(&#x27;active&#x27;);}
+      function setNodes(stage){root.querySelectorAll(&#x27;.node&#x27;).forEach(n=&gt;n.classList.remove(&#x27;selected&#x27;,&#x27;pulse&#x27;,&#x27;inactive&#x27;,&#x27;hit&#x27;));if(stage&gt;=1){root.querySelectorAll(&#x27;.node:not(.fact)&#x27;).forEach(n=&gt;{if(n.dataset.node!==dimension.value)n.classList.add(&#x27;inactive&#x27;);});const selected=root.querySelector(`[data-node=&quot;${dimension.value}&quot;]`);selected.classList.add(&#x27;selected&#x27;);if(stage===1)selected.classList.add(&#x27;pulse&#x27;);}if(stage&gt;=3)root.querySelector(&#x27;.fact&#x27;).classList.add(&#x27;hit&#x27;);root.querySelectorAll(&#x27;.relationship&#x27;).forEach(p=&gt;p.classList.remove(&#x27;active&#x27;));if(stage===2)root.querySelector(`#path-${dimension.value}`).classList.add(&#x27;active&#x27;);}
       const unique=(rows,key)=&gt;[...new Set(rows.map(d=&gt;d[key]))];
       const shortDates=rows=&gt;unique(rows,&#x27;date&#x27;).map(d=&gt;d.slice(0,5)).join(&#x27; · &#x27;);
       function syncNodeValue(){
@@ -1648,11 +1648,11 @@ html&gt;body{padding:0}&lt;/style&gt;
       function animateTraveler(token){const p=root.querySelector(`#path-${dimension.value}`),length=p.getTotalLength(),start=performance.now();traveler.classList.add(&#x27;show&#x27;);function frame(now){if(token!==runToken)return;const t=Math.min(1,(now-start)/1300),pt=p.getPointAtLength(length*t);traveler.setAttribute(&#x27;cx&#x27;,pt.x);traveler.setAttribute(&#x27;cy&#x27;,pt.y);if(t&lt;1)requestAnimationFrame(frame);else traveler.classList.remove(&#x27;show&#x27;);}requestAnimationFrame(frame);}
       function countTo(target,token){const start=performance.now(),duration=750;function frame(now){if(token!==runToken)return;const t=Math.min(1,(now-start)/duration),e=1-Math.pow(1-t,3);totalEl.textContent=money(Math.round(target*e));if(t&lt;1)requestAnimationFrame(frame);}requestAnimationFrame(frame);}
       function result(){setNodes(4);table(&#x27;result&#x27;);const rows=sales.filter(matches),sum=rows.reduce((a,d)=&gt;a+d.total,0);countTo(sum,runToken);status.innerHTML=`&lt;strong&gt;${rows.length} de ${sales.length} filas&lt;/strong&gt; permanecen visibles. La medida se recalcula únicamente con esas filas.`;}
-      function resetResult(){syncNodeValue();setNodes(4);table(&#x27;result&#x27;);const rows=sales.filter(matches);totalEl.textContent=money(rows.reduce((a,d)=&gt;a+d.total,0));status.innerHTML=`&lt;strong&gt;${rows.length} de ${sales.length} filas&lt;/strong&gt; permanecen visibles.`;}
+      function neutral(){syncNodeValue();setNodes(0);table(&#x27;neutral&#x27;);totalEl.textContent=money(sales.reduce((a,d)=&gt;a+d.total,0));status.textContent=&#x27;Selecciona un valor y pulsa “Animar propagación” para aplicar el filtro.&#x27;;}
       function animate(){clearTimers();const token=runToken;syncNodeValue();table(&#x27;waiting&#x27;);totalEl.textContent=money(sales.reduce((a,d)=&gt;a+d.total,0));setNodes(1);status.innerHTML=`1. &lt;strong&gt;${labels[dimension.value]}&lt;/strong&gt; recibe el filtro ${value.value}.`;later(()=&gt;{if(token!==runToken)return;setNodes(2);animateTraveler(token);status.innerHTML=&#x27;2. La relación &lt;strong&gt;1 → N&lt;/strong&gt; transporta el filtro hacia Hechos_Ventas.&#x27;;},1050);later(()=&gt;{if(token!==runToken)return;setNodes(3);status.innerHTML=&#x27;3. &lt;strong&gt;Hechos_Ventas&lt;/strong&gt; recibe el filtro y evalúa cada fila.&#x27;;},2550);later(()=&gt;{if(token!==runToken)return;result();},3350);}
       function save(){window.openai?.setWidgetState?.({modelContent:{dimension:dimension.value,value:value.value},privateContent:null}).catch(()=&gt;{});}
-      function applySaved(state){const s=state?.modelContent;if(s?.dimension&amp;&amp;[&#x27;product&#x27;,&#x27;client&#x27;,&#x27;month&#x27;].includes(s.dimension))dimension.value=s.dimension;loadValues(s?.value);resetResult();}
-      dimension.addEventListener(&#x27;change&#x27;,()=&gt;{clearTimers();loadValues();resetResult();save();});value.addEventListener(&#x27;change&#x27;,()=&gt;{clearTimers();resetResult();save();});play.addEventListener(&#x27;click&#x27;,animate);window.addEventListener(&#x27;openai:set_globals&#x27;,e=&gt;applySaved(e.detail?.globals?.widgetState));applySaved(window.openai?.widgetState);
+      function applySaved(state){const s=state?.modelContent;if(s?.dimension&amp;&amp;[&#x27;product&#x27;,&#x27;client&#x27;,&#x27;month&#x27;].includes(s.dimension))dimension.value=s.dimension;loadValues(s?.value);neutral();}
+      dimension.addEventListener(&#x27;change&#x27;,()=&gt;{clearTimers();loadValues();neutral();save();});value.addEventListener(&#x27;change&#x27;,()=&gt;{clearTimers();neutral();save();});play.addEventListener(&#x27;click&#x27;,animate);window.addEventListener(&#x27;openai:set_globals&#x27;,e=&gt;applySaved(e.detail?.globals?.widgetState));applySaved(window.openai?.widgetState);
     })();
   &lt;/script&gt;
 &lt;/div&gt;
